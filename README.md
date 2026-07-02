@@ -4,13 +4,11 @@ A backend service that simulates core ride-hailing allocation: geo-based driver 
 
 Built as a technical assignment for the vybe cabs backend engineering role.
 
-## Demo / Project Walkthrough
+## 🎥 Video Tutorials
 
-Watch the project demo walkthrough here:
-
-- Google Drive: https://drive.google.com/file/d/1iEMlpfBxb3m3StMn2Og4pkCMa0HaMdsD/view?usp=sharing
-
-This walkthrough explains the core flow of the system: registering drivers, requesting a ride, sending offers, accepting the ride atomically, and verifying concurrency handling.
+| Tutorial | Link | Description |
+|----------|------|-------------|
+| 🚀 **Setup & Development** | [Watch Now](https://drive.google.com/file/d/1iEMlpfBxb3m3StMn2Og4pkCMa0HaMdsD/view?usp=sharing) | Initial setup, configuration, and API testing |
 
 ---
 
