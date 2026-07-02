@@ -285,7 +285,7 @@ See [WRITEUP.md](./WRITEUP.md) for the full design rationale.
 
 ## Author
 
-**Saikrishna**  
+**Sai krishna Dandu**  
 Backend Technical Assignment — vybe cabs  
 Submitted: July 2026
 
