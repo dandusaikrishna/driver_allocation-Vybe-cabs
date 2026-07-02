@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Vybe Cabs API",
+    "description": "Real-Time Driver Allocation System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "driverId", "value": "" },
+    { "key": "rideId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Drivers",
+      "item": [
+        {
+          "name": "Create Driver",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Raj\",\n  \"phone\": \"+919876543210\",\n  \"latitude\": 12.9726,\n  \"longitude\": 77.5956\n}"
+            },
+            "url": "{{baseUrl}}/drivers"
+          }
+        },
+        {
+          "name": "List Drivers",
+          "request": { "method": "GET", "url": "{{baseUrl}}/drivers" }
+        },
+        {
+          "name": "Get Driver",
+          "request": { "method": "GET", "url": "{{baseUrl}}/drivers/{{driverId}}" }
+        },
+        {
+          "name": "Update Location",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"latitude\": 12.9730,\n  \"longitude\": 77.5960\n}"
+            },
+            "url": "{{baseUrl}}/drivers/{{driverId}}/location"
+          }
+        },
+        {
+          "name": "Get Notifications",
+          "request": { "method": "GET", "url": "{{baseUrl}}/drivers/{{driverId}}/notifications" }
+        }
+      ]
+    },
+    {
+      "name": "Rides",
+      "item": [
+        {
+          "name": "Request Ride",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"riderId\": \"rider-001\",\n  \"pickupLatitude\": 12.9716,\n  \"pickupLongitude\": 77.5946\n}"
+            },
+            "url": "{{baseUrl}}/rides"
+          }
+        },
+        {
+          "name": "Get Ride",
+          "request": { "method": "GET", "url": "{{baseUrl}}/rides/{{rideId}}" }
+        },
+        {
+          "name": "Accept Ride",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Idempotency-Key", "value": "unique-key-123" }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"round\": 1\n}" },
+            "url": "{{baseUrl}}/rides/{{rideId}}/accept/{{driverId}}"
+          }
+        }
+      ]
+    }
+  ]
+}

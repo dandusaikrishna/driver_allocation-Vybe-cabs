@@ -1,0 +1,22 @@
+# compiled output
+/dist
+/node_modules
+
+# env
+.env
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+.vscode
+
+# test
+/coverage
